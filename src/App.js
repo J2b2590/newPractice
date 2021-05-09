@@ -15,12 +15,12 @@ class App extends Component {
 
   num = undefined;
 
-  componentDidMount() {
-    let num = setInterval(this.increase, 100);
-  }
-  componentWillUnmount() {
-    clearInterval(this.num);
-  }
+  // componentDidMount() {
+  //   let num = setInterval(this.increase, 100);
+  // }
+  // componentWillUnmount() {
+  //   clearInterval(this.num);
+  // }
 
   increase = () => {
     this.setState({
@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Sum />
+        <Sum arr={this.state.arr} target={this.state.target} />
         <div class="count">
           <nav>
             <h1>h1 nav</h1>
