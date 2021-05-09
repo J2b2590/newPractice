@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Sum from "./sum";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+      arr: [1, 2, 3, 4, 5, 6, 7, 8],
+      target: 5,
+    };
+  }
+
+  num = undefined;
+
+  componentDidMount() {
+    let num = setInterval(this.increase, 100);
+  }
+  componentWillUnmount() {
+    clearInterval(this.num);
+  }
+
+  increase = () => {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  };
+
+  reset = () => {
+    this.setState({
+      counter: 0,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <Sum />
+        <div class="count">
+          <nav>
+            <h1>h1 nav</h1>
+            <p>p tag nav</p>
+            <a href="*">A tag</a>
+          </nav>
+          {/* <span>{this.state.counter}</span>
+        <button onClick={this.increase}>UP</button>
+        <button onClick={this.reset}>reset</button> */}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

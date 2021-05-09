@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.count {
+  margin: auto;
+  text-align: center;
+  margin-top: 25%;
+  padding: 5px;
+}
+
+button {
+  padding: 10px;
+  margin-left: 5%;
+}
+
+/* nav h1,
+nav p,
+nav a {
+  color: green;
+} */
+
+nav :is(h1, p, a) {
+  color: blue;
+}
+
+:is(.front-card, .back-card) a:hover {
+  color: red;
+}
